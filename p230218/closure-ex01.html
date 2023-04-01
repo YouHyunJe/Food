@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저</title>
+</head>
+<body>
+    <script>
+        /*
+        [클로저] closure
+        : 함수 내부에서 만든 지역변수가 사라지지 않고, 계속 유지하는 상태 (static)
+        : 클로저는 "함수"와 그 함수가 선언되었을 때의 "렉시컬 환경"과의 조합
+          cf) 렉시컬 환경 : 내부 함수가 선언되었을 때의 스코프
+
+        : [장점]   
+          - 전역변수를 줄일 수 있음
+        */
+
+        function outer() {
+            var num = 100;
+
+            // [클로저] ==============================
+            var count = 1;      // 자유 변수(정적)
+
+            return function inner() {  
+                count++; //외부 함수의 값 사용
+                console.log('count >> ', count);
+            }
+            // =======================================
+
+            //return inner;
+        }
+
+        var result = outer();
+        //inner함수 호출        
+        result();
+        result();
+        result();
+        result();
+    </script>
+    
+</body>
+</html>

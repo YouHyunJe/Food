@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>component</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script> <!-- react -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script> <!-- reactDOM -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script> <!-- babel -->
+</head>
+
+<body>
+    <h1 class="text"></h1>
+    <hr>
+    <script type="text/babel">
+        // 함수 정의
+        function greeting(name) {
+            return "안녕하세요, " + name + "님";
+        }
+        // 함수 호출 --> 호출은 되나, 웹 브라우저(화면)에 표현되지 않음
+        // 화면에 표현하는 코드를 추가하지 않았기 때문
+        greeting("홍길동");
+
+        // 엘리먼트가 추가될 위치 지정
+        const greetingInsert = document.querySelector(".text");
+
+        // 추가할 엘리먼트
+        const greetingContent = <div>{greeting("홍길동")}</div>
+
+        // component 
+        // : 함수정의, 첫 번쨰 문자를 대문자로 시작
+        function Card(title, description) {
+            return (
+                <div>
+                    <h2>{title}</h2>
+                    {description}
+                </div>
+            );
+        }
+
+        // 함수 호출
+        Card('신기한 리액트', '리액트는 정말 재미있다');
+
+        // 리액트는 위 함수를 태그처럼 사용할 수 있는 문법 제공 : 직관적
+        <Card title="신기한 리액트" description="리액트는 정말 재미있다" />
+
+        // react를 이용하여 엘리먼트  추가
+        ReactDOM.createRoot(greetingInsert).render(greetingContent);
+    </script>
+</body>
+
+</html>

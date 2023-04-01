@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js" integrity="sha256-ZwqZIVdD3iXNyGHbSYdsmWP//UBokj2FHAxKuSBKDSo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 id="greeting">Hello</h1>
+    <button type="button" onclick="textChange();">텍스트 변경</button>
+    <button type="button" id="clear" onclick="textBefore();">원래 상태로 변경</button>
+    <hr>
+    <script>
+        var greeting = document.getElementById('greeting');
+
+        // 1. id가 greeting인 h1 element에 접근
+        console.log(greeting);
+        document.write(greeting + '<br>');
+
+        // 2. id가 greeting인 h1 element의 content 접근
+        console.log(greeting.innerText);
+        document.write(greeting.innerText + '<br>');
+
+        // 3. id가 greeting인 h1 element의 content 값 변경
+        //greeting.innerText = '좋은 아침';
+
+        // 4. 
+        // 이름이 있는 함수는 선언적 함수(함수 선언식), 일반 함수라고도 부름
+        // cf) 함수 표현식(이름이 없는 함수)
+        function textChange() {
+            // [첫 번째 방법]
+            //document.getElementById('greeting').innerText = '오늘도 좋은 하루';
+            //document.getElementById('greeting').style.backgroundColor = 'skyblue';
+
+            // [두 번째 방법]
+            var element = document.getElementById('greeting');
+            element.innerText = '오늘도 좋은 하루';
+            element.style.backgroundColor = '#0dd';
+
+            // [세 번째 방법]
+            //$('#greeting').html('만나서 반가워요');
+        }
+        function textBefore() {
+            var element = document.getElementById('greeting');
+            element.innerText = 'Hello';
+            element.style.backgroundColor = 'initial';
+        }
+    </script>
+</body>
+</html>

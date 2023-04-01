@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정의 함수</title>
+</head>
+<body>
+    <script>
+        // 1. 함수 정의
+        // arguments는 매개변수가 있고 없고의 차이가 없다
+        // arguments는 함수 밖에서 쓸 수 없다
+        function avg(...args) {
+            var total = 0;
+
+            document.write('매개변수 args >> ', args);
+            document.write('<br>');
+            document.write('arguments.length >> ', arguments.length);
+            document.write('<br>');
+
+            for(var i=0; i<args.length; i++) {
+                document.write('[함수 내 for문] args의 요소 ', args[i]);
+                document.write('<br>');
+                total += args[i];
+            }
+            document.write('[함수 내] 총합 >> ', total);
+            document.write('<br>');
+
+            var mean = (total/args.length).toFixed(2);
+            return mean;
+        }
+
+        // 2. 함수 호출
+        var result_avg = avg(2, 3, 5);
+        document.write('avg(2, 3, 5) 호출 결과 >> ', result_avg);
+
+        // 매개변수를 함수 밖에서 접근
+        // document.write('args >> ', args);
+        document.write('arguments.length >> ', arguments.length);
+        document.write('<br>');
+        document.write('<< 실행 완료 >>');
+    </script>
+</body>
+</html>

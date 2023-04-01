@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[중첩 함수] 렉시컬 스코프</title>
+</head>
+
+<body>
+    <script>
+        // [전역변수] =====================
+        //var a = 1;
+        //var b = 2;
+        //var c = 3;
+        // [함수 정의] ====================
+        function outer() {
+            // [지역 변수] ================
+            var b = 20;
+            var c = 30;
+            function inner() {
+                var c = 300;
+                document.write('1. a = ' + a + '<br>');
+                document.write('2. b = ' + b + '<br>');
+                document.write('3. c = ' + c + '<br>');
+                document.write('inner() 종료', '<br>');
+            }
+            inner();
+            document.write('[outer scope] a = ' + a + '<br>');
+            document.write('[outer scope] b = ' + b + '<br>');
+            document.write('[outer scope] c = ' + c + '<br>');
+        }
+        // [함수 호출] ====================
+        outer();
+        document.write('[global scope] a = ' + a + '<br>');
+        document.write('[global scope] b = ' + b + '<br>');
+        document.write('[global scope] c = ' + c + '<br>');
+        document.write('...프로그램 종료...');
+    </script>
+</body>
+
+</html>

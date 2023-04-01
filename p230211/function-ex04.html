@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정의 함수</title>
+</head>
+<body>
+    <script>
+        // 사용자 정의 함수 =============================
+        /*
+        << 함수 저의 문법 >>
+        function 함수명(매개변수1, 매개변수2) {
+            명령어;
+            return 값;
+        }
+        따로 자료형을 이력하지 않음
+        JS가 내부에서 따로 자료형을 관리하기 때문
+
+        << 함수 호출 >> =================================
+        함수명(인수1, 인수2);
+
+        << 함수 정의 형태 >> ============================
+        1. 매개변수가 있고, 리턴값 있음
+        2. 매개변수가 있고, 리턴값 없음
+        3. 매개변수가 없고, 리턴값 있음
+        4. 매개변수가 없고, 리턴값 없음
+
+        << return 의미 >> ===============================
+        - 함수 실행 끝
+        - 호출한 쪽으로 리턴값을 넘겨줌 -> 코드에 따라 다름
+
+        << 실행 끝 >> ===================================
+        - return
+        - body의 }(닫힌 중괄호) -> return이 없다면
+        */
+
+       // 2. 함수 호출
+       info();
+       info('홍길동');
+       info('홍길동', 25);
+       info('홍길동', 25, 'good day');
+
+       // 1. 함수 정의
+       // 매개변수가 있고, 리턴값 없음
+       // << 특징 >>
+       // - 매개변수와 인수의 자료형이 동일한지 검사하지 않음
+       // - 매개변수의 개수와 인수의 개수가 같은지 검사하지 않음
+       // - 매개변수의 개수가 인수의 개수보다 적으면 undefined로 저장
+       function info(name, value) {
+           document.write('name >> ', name);
+           document.write('<br>');
+           document.write('value >> ', value);
+           document.write('<br>');
+           document.write('============================<br>');
+       }
+    </script>
+</body>
+</html>

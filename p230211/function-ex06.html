@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정의 함수</title>
+</head>
+<body>
+    <script>
+        // 1. 함수 정의
+        function avg() {
+            var total = 0;
+            document.write('[함수 내] arguments의 길이 >> ', arguments.length);
+            document.write('<br>');
+
+            for(var i=0; i<arguments.length; i++) {
+                document.write('[함수 내 for문] arguments >> ', arguments[i]);
+                document.write('<br>');
+                total += arguments[i];
+            }
+            document.write('[함수 내] 총합 >> ', total);
+            document.write('<br>');
+
+            // toFixed() : 소수 몇째짜리 까지 설정할 수 있는 함수
+            var mean = (total/arguments.length).toFixed(2);
+            return mean;
+        }
+
+        // 2. 함수 호출
+        var result_avg = avg(2, 3, 5);
+        document.write('avg(2, 3, 5) 호출 결과 >> ', result_avg);
+    </script>
+</body>
+</html>

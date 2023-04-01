@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[변수의 종류] scope</title>
+</head>
+<body>
+    <script>
+        /*
+        [scope]
+        - 전역 스코프(global scope)
+        : <script> 내 선언된 변수
+        : 어디서든지 접근 가능
+
+        - 지역 스코프(local scope)
+        : {} 내 선언된 변수
+        : 해당 영역 내에서만 접근 가능
+        : function level scope  - var
+        : block level scope     - let
+        */
+        // [전역변수] ===================
+        var a_global = 1;
+
+        // 함수 정의
+        function scope_test() {
+            console.log('[전역변수] a_global >> ', a_global);
+            // [지역변수] ===============
+            var a_local_one = 10;
+            console.log('[지역변수] a_local_one >> ', a_local_one);
+
+            if(a_global == 1) {
+                // [지역변수] ===========
+                var a_local_two = 100;
+                console.log('[지역변수] if문 내 선언 a_local_two >> ', a_local_two);
+            }
+            console.log('[지역변수] if문 외부 선언 a_local_two 접근 >> ', a_local_two);
+        }
+        // 함수 호출
+        scope_test();
+        console.log('[지역변수] scope_test() 외부에서 a_local_one 접근 >> ', a_local_one);
+    </script>
+</body>
+</html>

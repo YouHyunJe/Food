@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저 문제</title>
+</head>
+<body>
+    <script>
+        function sum(base) {
+            var number = base;
+
+            return function (adder) {
+                number += adder;
+                return number;
+            }
+        }
+
+        var fiveAdder = sum(5);
+        document.write('fiveAdder(3) >> ', fiveAdder(3));
+        document.write('<br>');
+        document.write('fiveAdder(10) >> ', fiveAdder(10));
+        document.write('<br>');
+    </script>    
+</body>
+</html>

@@ -1,0 +1,15 @@
+JS : 동적 처리가 가능
+
+react : 
+- JS를 좀 더 쉽게 사용할 수 있도록 해주는
+- facebook에서 만든 JavaScript 라이브러리
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script> 윗 단에 추가
+
+VScode 설정
+format on save : 저장할 때 코드를 자동 정렬해 줌
+
+[components]

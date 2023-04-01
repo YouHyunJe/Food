@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 정의 함수</title>
+</head>
+<body>
+    <script>
+        // 사용자 정의 함수 =============================
+        /*
+        << 함수 저의 문법 >>
+        function 함수명(매개변수1, 매개변수2) {
+            명령어;
+            return 값;
+        }
+        따로 자료형을 이력하지 않음
+        JS가 내부에서 따로 자료형을 관리하기 때문
+
+        << 함수 호출 >> =================================
+        함수명(인수1, 인수2);
+
+        << 함수 정의 형태 >> ============================
+        1. 매개변수가 있고, 리턴값 있음
+        2. 매개변수가 있고, 리턴값 없음
+        3. 매개변수가 없고, 리턴값 있음
+        4. 매개변수가 없고, 리턴값 없음
+
+        << return 의미 >> ===============================
+        - 함수 실행 끝
+        - 호출한 쪽으로 리턴값을 넘겨줌 -> 코드에 따라 다름
+
+        << 실행 끝 >> ===================================
+        - return
+        - body의 }(닫힌 중괄호) -> return이 없다면
+        */
+
+       // 2. 함수 호출
+       document.write('함수 호출 >> ', stringReturn());
+
+       // 1. 함수 정의
+       // 매개변수가 없고, 리턴값 있음
+       // 이름이 없는 함수가 있을 수 있는데 그런 함수는 익명 함수라 한다
+       function stringReturn() {
+        return '즐거운 하루';
+        document.write('stringReturn() 실행 끝'); // 실행 되지 않음, 리턴 아래는 코드 작성을 하지 않음
+       }
+    </script>
+</body>
+</html>

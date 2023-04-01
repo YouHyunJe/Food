@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Type</title>
+</head>
+<body>
+    <script>
+        /*
+        [자료형] type
+        - number : 숫자 (정수, 실수 / 내부적으로는 모든 숫자를 실수로 처리)
+        - string : 문자열 ("", '' 모두 사용 가능)
+        - boolean : true/false
+        - undefined : 초기화되지 않은 상태
+        */
+
+        // [변수 선언]
+        // 자료명을 쓰지 않음
+        // var 변수명;
+        var num;
+
+        document.write(num);
+        document.write('<br>');
+        document.write('num의 자료형 >> ' + typeof num);
+        document.write('<br>');
+
+        num = 100;
+        document.write(num);
+        document.write('<br>');
+        document.write('num의 자료형 >> ' + typeof num);
+        document.write('<br>');
+
+        num = 2.5;
+        document.write(num);
+        document.write('<br>');
+        document.write('num의 자료형 >> ' + typeof num);
+        document.write('<br>');
+
+        num = '안녕';
+        document.write(num);
+        document.write('<br>');
+        document.write('num의 자료형 >> ' + typeof num);
+        document.write('<br>');
+
+        num = true;
+        document.write(num);
+        document.write('<br>');
+        document.write('num의 자료형 >> ' + typeof num);
+        document.write('<br>');
+
+        console.log(num);
+    </script>
+</body>
+</html>

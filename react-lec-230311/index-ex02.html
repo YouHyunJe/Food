@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상품 페이지</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    .main-card button {
+        position: relative;
+        left: -45px;
+        bottom: 15px;
+    }
+
+    .favorites {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .favorites img {
+        width: 150px;
+    }
+</style>
+
+<body>
+    <div id="food-li-insert"></div>
+    <script type="text/babel">
+        // 1. 추가할 엘리먼트
+        // [react syntax] JSX
+        // : javascript XML
+        // : react에서 HTML 작성
+        // const 변수명 = (여러 라인 HTML Tag);
+        // const 변수명 = 한 라인 HTML Tag;
+        // 한 라인으로 된다면 소괄호 불필요, 여러라인 일 경우에 소괄호 입력
+        // ex) const title = <h1>제목</h1>;
+
+        // 기존 h1 --> react 변경
+        // const title = <h1>상품 1페이지</h1>;
+
+        // title -> component 변경
+        function Title(props) {
+            console.log(props);
+            // return <h1>상품 1페이지</h1>;
+            return <h1>{props.children}</h1>;
+        }
+
+        // arrow 함수
+        // const Title = () => {
+        //     return <h1>상품 1페이지</h1>;
+        // }
+
+        // 기존 form --> react 변경
+        // const form = (
+        //     <form>
+        //         <input type="text" name="name" placeholder="상품명을 입력하세요" />&nbsp;
+        //         <button type="submit">추가</button>
+        //     </form>
+        // );
+
+        // form -> component 변경
+        // function Form() {
+        //     return (
+        //         <form>
+        //             <input type="text" name="name" placeholder="상품명을 입력하세요" />&nbsp;
+        //             <button type="submit">추가</button>
+        //         </form>
+        //     );
+        // }
+
+        // arrow 함수
+        const Form = () => {
+            return (
+                <form>
+                    <input type="text" name="name" placeholder="상품명을 입력하세요" />&nbsp;
+                    <button type="submit">추가</button>
+                </form>
+            );
+        }
+
+        // 기존 div(main-card) --> react 변경
+        // const mainCard = (
+        //     <div class="main-card">
+        //         <img src="img/foot-one.jpg" alt="올리브오일" width="400" />
+        //         <button>🤍</button>
+        //     </div>
+        // );
+
+        // mainCard --> component 변경
+        // function MainCard() {
+        //     return (
+        //         <div class="main-card">
+        //             <img src="img/foot-one.jpg" alt="올리브오일" width="400" />
+        //             <button>🤍</button>
+        //         </div>
+        //     );
+        // }
+
+        // [형태1]
+        // arrow 함수 --> 매개변수가 하나일 때는 소괄호 생략 가능하나, 있어도 소괄호 해주는게 좋음
+        // const MainCard = (props) => {
+        //     return (
+        //         <div class="main-card">
+        //             {/* <img src="img/foot-one.jpg" alt="올리브오일" width="400" /> */}
+        //             <img 
+        //             src={props.img} 
+        //             alt="올리브오일" 
+        //             width="400" />
+        //             <button>🤍</button>
+        //         </div>
+        //     );
+        // }
+        // [형태2]
+        const MainCard = ({ img }) => {
+            function handleHeartClick() {
+                console.log("하트 클릭");
+            }
+            function handleHeartMouseOver() {
+                console.log("하트 마우스 오버")
+            }
+            return (
+                <div className="main-card">
+                    {/* <img src="img/foot-one.jpg" alt="올리브오일" width="400" /> */}
+                    <img
+                        src={img}
+                        alt="올리브오일"
+                        width="400" />
+                    <button onClick={handleHeartClick} onMouseOver={handleHeartMouseOver}>🤍</button>
+                </div>
+            );
+        }
+
+        // 기존 ul(favorites) --> react 변경
+        // const foodItem = (
+        //     <li>
+        //         <img src="img/foot-one.jpg" alt={"음식"} />
+        //     </li>
+        // );
+
+        // foodItem --> component 변경
+        // function FoodItem(props) {
+        //     console.log(props);
+        //     return (
+        //         <li>
+        //             <img src={props.img} alt={props.title} />
+        //         </li>
+        //     );
+        // }
+
+        // arrow 함수
+        const FoodItem = (props) => {
+            return (
+                <li>
+                    <img
+                        src={props.img}
+                        alt={props.title}
+                        style={{ width: "150px", border: "2px solid #eee" }} />
+                </li>
+            );
+        }
+
+        // const favorites = (
+        //     <ul class="favorites">
+        //         {/* FoodItem("img/foot-one.jpg") */}
+        //         <FoodItem img="img/foot-one.jpg" title="이미지1" />
+        //         <FoodItem img="img/foot-two.jpg" title="이미지2" />
+        //         <FoodItem img="img/foot-three.jpg" title="이미지3" />
+        //     </ul>
+        // );
+
+        // favorites --> component 변경
+        // function Favorites() {
+        //     return (
+        //         <ul class="favorites">
+        //             <FoodItem img="img/foot-one.jpg" title="이미지1" />
+        //             <FoodItem img="img/foot-two.jpg" title="이미지2" />
+        //             <FoodItem img="img/foot-three.jpg" title="이미지3" />
+        //         </ul>
+        //     );
+        // }
+
+        // arrow 함수
+        const Favorites = () => {
+            return (
+                <ul className="favorites">
+                    <FoodItem img="img/foot-one.jpg" title="이미지1" />
+                    <FoodItem img="img/foot-two.jpg" title="이미지2" />
+                    <FoodItem img="img/foot-three.jpg" title="이미지3" />
+                </ul>
+            );
+        }
+
+        // 여러개의 요소를 랜더링
+        const app = (
+            <div>
+                {/* title */}
+                {/* <Title /> */}
+                <Title>페이지 1</Title>
+                {/* form */}
+                <Form />
+                {/* mainCard */}
+                <MainCard img="img/foot-three.jpg" />
+                {/* favorites */}
+                <Favorites />
+            </div>
+        );
+
+
+        // 엘리먼트가 추가될 위치 지정(div)
+        const foodLiInsert = document.getElementById('food-li-insert');
+        // React 이용하여 엘리먼트 추가
+        ReactDOM.createRoot(foodLiInsert).render(app);
+    </script>
+</body>
+
+</html>

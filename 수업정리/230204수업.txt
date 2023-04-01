@@ -1,0 +1,22 @@
+보강 수업 8번 진행
+1일 6시간 : 10시 ~ 17시
+
+<< 2020.02.04 (토) >> 1일차
+Java Script
+
+java script는 java와 다르다
+java : 객체 지향 언어
+java script : 객체 기반 언어
+
+새 vs 실행 	: ctrl + shift + n
+패널 활성/비활성 	: ctrl + b
+explorer 	: ctrl + shift + e
+파일 폰트 크기 확대/축소 : ctrl + 휠
+파일 닫기		: ctrl + w
+
+[Java Script]
+-변수
+-자료형
+-연산자
+-조건문 : if, switch
+-반복문 : while, do~while, for

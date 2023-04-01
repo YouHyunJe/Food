@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>
+</head>
+<body>
+    <div id="outer">
+        <h1>제목1</h1>
+        <div id="inner">
+            <ul id="items">
+                <li class="item">항목1</li>
+                <li class="item">항목2</li>
+                <li class="last">항목3</li>
+            </ul>
+        </div>
+        <input type="text" id="txt" value="default value">
+        <button type="button" id="btn">값 가져오기</button>
+        <button type="button" id="btn_Input">값 설정하기</button>
+    </div>
+    <script>
+        /*
+        [jQuery] 원하는 element(요소) 선택, 변경, 값 가져오기
+        1. html 함수
+            $('선택자').html()
+            : 선택자 내 자식 element 통채로 읽어 옴
+            : 추출 - 여러 개의 element가 일치할 경우, 첫 번째만
+            : 설정 - 여러 개의 element가 일치할 경우 모든 element에 설정
+                    (html 태그 그대로 설정됨)
+            : 동적처리
+
+        2. text 함수
+            $('선택자').text()
+            : 선택자 내 자식 element 포함 모두 문자열로 읽어옴
+            : 추출 - 여러 개의 element가 일치할 경우, 모두
+            : 설정 = 여러 개의 element가 일치할 경우 모든 element에 설정
+                    (html 태그도 문자열로 설정)
+
+        3. val 함수
+            $('선택자').val()
+            : input element 정의된 value 속성값 사용할 때
+        */
+       $(function(){
+            // [추출]
+            var html = $('.item').html();
+            var text = $('.item').text();
+            var val = $('#txt').val();
+            
+            console.log('[jQuery] 바로 실행');
+            console.log(html);
+            console.log(text);
+            console.log(val);
+            console.log('typeof html >>', typeof html);
+            console.log('typeof text >>', typeof text);
+            console.log('typeof val >>', typeof val);
+
+            // [설정]
+            // $('.item').html('<strong>ADD</strong>');
+            $('.item').text('<strong>ADD</strong>');
+            $('#txt').val('설정값');
+       });       
+    </script>
+</body>
+</html>

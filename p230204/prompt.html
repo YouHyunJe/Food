@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[입력창]</title>
+</head>
+<body>
+    <h1>입력창</h1>
+    <script>
+        // var answer = prompt('오늘 기분이 어떠신가요 ??');
+        // document.write('답변은...', answer);
+
+        // [문제]
+        // prompt 함수를 이용하여, 정수 1개를 입력 받은 후 1증가된 값 출력
+        // 출력 : 1 증가된 값은 O 입니다.
+        // prompt 문구 : 정수 1개를 입력하세요.
+        var answer = prompt('정수 1개를 입력하세요.');
+        // if(answer != null)
+        //     document.write('1증가된 값은 ' + (++answer) + '입니다.')
+
+        answer = parseInt(answer) + 1;
+        // answer = parseInt(answer);
+        // answer = Number(answer);
+        document.write('1증가된 값은 ' + answer + '입니다.');
+        document.write('<br>');
+        document.write('자료형 확인 >> ', typeof answer);
+    </script>
+</body>
+</html>

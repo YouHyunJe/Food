@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저 : 함수 선언식과 비교</title>
+</head>
+<body>
+    <script>
+        // [함수 선언식(function declarations)]
+        function addCount() {
+            // 지역변수
+            var count = 0;
+            count++;
+            return count;
+        }
+
+        // [함수 호출]
+        for(let i=1; i<4; i++)
+            console.log(i + "번 addCount() 호출 >>> " + addCount());
+
+    </script>
+    
+</body>
+</html>

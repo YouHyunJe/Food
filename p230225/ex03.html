@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>
+</head>
+<body>
+    <h1>제목</h1>
+    <div id="nav" class="nav">
+        <ul>
+            <li>첫 번째</li>
+        </ul>
+    </div>
+    <script>
+    /*
+    [문법]
+    var 변수명 = $('선택자');
+    1. var 변수명   : jQuery 리턴값 저장
+    2. $()          : 이름이 $함수 호출, 
+                    : 인수인 선택자에 해당하는 노드를 찾아 리턴
+    3. 선택자       : 접근하고자 하는 element 지정
+    */
+
+    // [jQuery]
+    // [element 접근]
+    //var divs = $('div');
+
+    // [id 접근]
+    //var divs = $('#nav');
+
+    // [claass 접근]
+    //var divs = $('.nav');
+
+    // [부모 자식관계 접근]
+    //var divs = $('body > div');
+
+    // [명확하게 표현]
+    var divs = $('div#nav.nav');
+    document.write(divs + '<br>');
+    console.log('jQuery')
+    console.log(divs);
+
+    // [문제] JavaScript
+    //var js_divs = document.getElementsByTagName('div');
+    //var js_divs = document.getElementById('nav');
+    //var js_divs = document.getElementsByClassName('nav');
+    //var js_divs = document.querySelector('body > div');
+    var js_divs = document.querySelector('div#nav.nav');
+    document.write(js_divs + '<br>');
+    console.log('JavaScript')
+    console.log(js_divs);
+
+    </script>
+</body>
+</html>

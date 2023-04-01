@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>
+</head>
+<body>
+    <div id="hello">안녕하세요 좋은 오후</div>
+    <div class="btn">
+        <button type="button" name="button" id="btn_check" onclick="check();">클릭하세요</button>
+    </div>
+    <script>
+        // [jQuery]
+        // $('#btn_check').click(
+        //     function() {
+        //         // 1. 스타일 1개씩 지정
+        //         //$('#hello').css('background-color', '#ff0');
+        //         //$('#hello').css('border', '4px solid #000');
+                
+        //         // 2. 스타일 여러개 지정
+        //         $('#hello').css({
+        //             'background-color' : '#0f0',
+        //             'border' : '3px solid #f00'
+        //         });
+        //     }
+        // );
+        // [JavaScript]
+        function check() {
+            var element = document.getElementById('hello');
+            element.style.backgroundColor = '#0ff';
+            element.style.border = '3px solid #00f';
+        }
+    </script>
+</body>
+</html>

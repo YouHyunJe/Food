@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[반복문] 무한 루프</title>
+</head>
+<body>
+    <h1>반복문 : 무한 루프(while)</h1>
+    <script>
+    // while을 무한 루프로 구현하여
+    // 1~10을 출력
+        var num = 1;
+        // 방법 1
+        // while(true) {
+        //     if(num < 11) {
+        //         document.write(num);
+        //         document.write('<br>');
+        //         num++;
+        //     }else
+        //     break;
+        // }
+        
+        // 방법 2
+        // while(true) {
+        //     document.write(num);
+        //     document.write('<br>');
+        //     num++;
+        //     if(num == 11)
+        //         break;
+        // }
+        // 방법 3
+        while(true) {
+            document.write(num);
+            document.write('<br>');
+            if(num == 10)
+                break;
+            num++;
+        }
+    </script>
+</body>
+</html>

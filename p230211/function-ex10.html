@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 인수로 함수명 가능</title>
+</head>
+<body>
+    <script>
+        // [함수 정의] ==========================
+        function hello() {
+            console.log('hello ! ! !');
+        }
+        function hi() {
+            console.log('hi ! ! ! ! !');
+        }
+        function execute(args) {
+            console.log('[execute 함수 실행 시작]');
+            args();
+            console.log('[execute 함수 실행 종료]');
+        }
+        // [함수 호출] ==========================
+        //hello()
+        execute(hello);
+        execute(hi);    
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <!-- jQuery CDN -->
+    <!-- <script src="jquery-3.6.3.slim.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.3.slim.min.js"></script>
+</head>
+<body>
+    <h1 id="greeting">Hello</h1>
+    <button type="button" id="change">텍스트 변경</button>
+    <button type="button" id="clear">원래 상태로 변경</button>
+    <script>
+        // [jQuery]
+        $('#change').click(
+            function() {
+                // $('#greeting').html('만나서 반가워요');
+                // $('#greeting').css('background-color', '#eee');
+                $('#greeting').html('만나서 반가워요').css('background-color', '#eee');
+            }
+        );
+        $('#clear').click(
+            function() {
+                $('#greeting').html('Hello').css('background-color', 'initial');
+            }
+        )
+    </script>
+</body>
+</html>

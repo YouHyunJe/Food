@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[중첩함수] 함수 내부에서만 inner 함수 호출</title>
+</head>
+<body>
+    <script>
+        // 함수 정의 ====================================================
+        function outer() {
+            document.write('[outer() 실행 시작]<br>');
+            function inner() {
+                document.write('>>> inner() 함수 실행 됨', '<br>');
+            }
+            document.write('inner() 호출', '<br>');
+            inner();
+            document.write('[outer() 실행 종료]<br>');
+        }
+
+        // 함수 호출 ====================================================
+        outer();
+    </script>
+</body>
+</html>

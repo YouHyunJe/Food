@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[중첩함수]리턴값으로 함수명</title>
+</head>
+<body>
+    <script>
+        /*
+        [중첩 함수]
+        - 함수 정의 내 함수 정의
+        */
+        function createHello() {
+            document.write('[createHello 함수 시작]<br>');
+            function hello(name) { // inner function
+                document.write(' >>> [hello 함수 시작]<br>');
+                document.write(name, '님, 안녕하세요');
+                document.write('<br>');
+                document.write(' >>> [hello 함수 종료]<br>');
+            }
+            document.write('[createHello 함수 종료]<br>');
+            return hello;
+        }
+        var result = createHello();
+        result('홍길동');
+        document.write('...프로그램 종료...');
+    </script>
+</body>
+</html>
